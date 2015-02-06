@@ -1,7 +1,4 @@
 <?php
-	//Set namespace
-	//namespace bt\SQL;
-	//Main class of controlling BT_oosql.php
 	class SQLControls{
 		
 		//Creates a table
