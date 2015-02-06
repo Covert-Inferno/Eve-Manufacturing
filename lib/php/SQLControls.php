@@ -1,4 +1,24 @@
 <?php
+
+	/*
+	Author: Jeffrey Nelson
+	Date Started: November 2014
+	Description:
+		Wrapper for PDOConnection.php
+	*/
+	
+	///////////////////////////
+	//SQL Controls Constants///
+	//If SQLSC fails///////////
+	///////////////////////////
+
+	defined("ALLOW_TABLE_CREATION") or define("ALLOW_TABLE_CREATION",false);
+	defined("ALLOW_TABLE_DROP") or define("ALLOW_TABLE_DROP",false); 
+	
+	///////////////////////////
+	//SQLControls Class////////
+	///////////////////////////
+
 	class SQLControls{
 		
 		//Creates a table
@@ -45,7 +65,7 @@
 		
 			//Initializes debug
 			if(DEBUG){
-				$log = new LogMessage("SQL::query");
+				$log = new Log("SQL::query");
 				$log->setParameters("table_info");
 			}
 			
@@ -159,7 +179,7 @@
 			
 			//Initializes debug
 			if(DEBUG){
-				$log = new LogMessage("SQL::insert");
+				$log = new Log("SQL::insert");
 			}
 			
 			//Input handling - Argument count

@@ -12,7 +12,7 @@
 	///////////////////////////
 	
 	class TableReader{
-		public static function getTable($table){
+		public static function get_table($table){
 			$fileDir = TABLE_LOCATION . $table;
 			
 			$myfile = fopen($fileDir, "r") or die("Unable to open file!");
