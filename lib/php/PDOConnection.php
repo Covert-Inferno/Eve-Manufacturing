@@ -14,6 +14,11 @@ Description:
 
 defined("DEBUG") or define("DEBUG",false);
 
+defined("DB_HOST") or define("DB_HOST","You may");
+defined("DB_NAME") or define("DB_NAME","want to");
+defined("DB_USERNAME") or define("DB_USERNAME","change these.");
+defined("DB_PASSWORD") or define("DB_PASSWORD","If you want to");
+
 ///////////////////////////
 //PDOConnection Class//////
 ///////////////////////////

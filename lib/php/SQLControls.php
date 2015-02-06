@@ -9,11 +9,6 @@
 				return 0;
 			}
 			
-			//Ensures it's a properly formatted table
-			if(!TableList::is_table($table_info)){
-				return 0;
-			}
-			
 			//Prepares parameters
 			$redef_params = array();
 			for($i = 0; $i < (int)(count($table_info["PARAMS"])/2);$i++){
@@ -33,11 +28,6 @@
 		public static function drop_table($table_info){
 			//Check Permissions
 			if(!ALLOW_TABLE_DROP){
-				return 0;
-			}
-			
-			//Ensures it's a properly formatted table
-			if(!TableList::is_table($table_info)){
 				return 0;
 			}
 			
@@ -191,17 +181,6 @@
 				return 0;
 			}
 			
-			//Input handling - Table
-			$table_info = func_get_arg(0);
-			if(!TableList::is_table($table_info)){
-				if(DEBUG){
-					$log->add("Invalid table provided");
-					$log->display();
-					$log = null;
-				}
-				return 0;
-			}
-			
 			//Prepare element array
 			$elements = null;
 			if($func_arg_count > 2){ //Table and elements
@@ -257,11 +236,6 @@
 		
 		//Deletes an element from a table
 		public static function delete($table_info,$arg,$val){
-		
-			//Ensures it's a properly formatted table
-			if(!TableList::is_table($table_info)){
-				return 0;
-			}
 			
 			//Ensures arg is a string
 			if(!is_string($arg)){
@@ -278,10 +252,6 @@
 		}
 		
 		public static function does_exist($table_info,$arg,$val){
-			//Ensures it's a properly formatted table
-			if(!TableList::is_table($table_info)){
-				return 0;
-			}
 			
 			//Ensures arg is a string
 			if(!is_string($arg)){
